@@ -28,7 +28,7 @@ A GUI is not planned as i am not good with graphics but if somebody has the time
 !-- Feedback --!
 
 As you probably will be able to see from the code i am not very good at python or programming and i appreciate every help i can get.
-Feel free to inform me about any issue i have made or improvement i could make (including english grammar and spelling). Thanks in advance!
+Feel free to inform me about any issue i have made or improvement i could make (including english grammar and spelling). Thanks in advance! You can contact me here: advancedcode754@gmail.com
 
 !-- How does it work? --!
 
