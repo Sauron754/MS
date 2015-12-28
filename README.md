@@ -33,3 +33,7 @@ Feel free to inform me about any issue i have made or improvement i could make (
 !-- How does it work? --!
 
 Its simple there is a class called object which defines and saves all the data of an object. Then there are modules which calculate different physical aspects like movement, rotation, collisions etc.. Finally a function called MPS puts it all together and runs the modules step by step (I havent quite desided in which order).
+
+!-- License --!
+
+License information can be found here: https://github.com/Sauron754/MS/blob/master/LICENSE
