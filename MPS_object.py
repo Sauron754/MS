@@ -19,7 +19,11 @@ class object_class():
 		self.diameter_z = diameter_z
 		self.metal = metal
 		self.state = state
-		self.check_data()
+		if self.check_data() == VALID:
+			print("All the parameters are valid")
+		else:
+			#!-- OSError is just a placeholder for the upcoming selfdefined error --!#
+			raise OSError("Some parameters are invalid")
 		#if more data needs to be included it can easily be added there
 	def check_data():
 		global x_pos_valid
@@ -153,22 +157,12 @@ class object_class():
 			print("STATE NOT VALID!")
 			state_valid = False
 		#sum up in list instead it doesnt work
-		return x_pos_valid
-		return y_pos_valid
-		return z_pos_valid
-		return x_movement_valid
-		return y_movement_valid
-		return z_movement_valid
-		return x_rot_valid
-		return y_rot_valid
-		return z_rot_valid
-		return cw_valid
-		return m
-		return density_valid
-		return diameter_x_valid
-		return diameter_y_valid
-		return diameter_z_valid
-		return metal_valid
-		return state_valid
-
+		list_valid = [x_pos_valid, y_pos_valid, z_pos_valid, x_movement_valid, y_movement_valid, z_movement_valid, x_rot_valid, y_rot_valid, z_rot_valid, cw_valid, m_valid, density_valid, diameter_x_valid, diameter_y_valid, diameter_z_valid, metal_valid, state_valid]
+		for i in list_valid:
+			if i == True:
+				print("True")
+			else:
+				return INVALID
+		else:
+			return VALID
 #!------- Object Class -------!#
