@@ -16,7 +16,7 @@ def MPS(precision, time_runthrough, runthrough_number, object_1_posx, object_1_p
 	sequence_time = 10**negative_precision
 	#-----------#
 	#!---calculation process---!
-	for process_number in range(runthrough_number)
+	for process_number in range(runthrough_number):
 		#**linear movement module**#
 		new_coordinates = MPS_modules.lin_mov(1)
 		object_1.x_pos = new_coordinates[0]
