@@ -1,7 +1,7 @@
 #!-------- Object Class ---------!#
 class object_class():
 	def __init__(self, x_pos, y_pos, z_pos, x_movement, y_movement, z_movement, x_rot = 0, y_rot = 0, z_rot = 0, cw = 1, m = 1, density = 1, diameter_x = 1, diameter_y = 1, diameter_z = 1, metal = False, state = "solid"):
-		self.data = [x_pos, y_pos, z_pos, x_movement, y_movement, z_movement, x_rot, y_rot, z_rot, cw, m, density, diamenter_x, diameter_y, diameter_z, metal, state]
+		self.data = [x_pos, y_pos, z_pos, x_movement, y_movement, z_movement, x_rot, y_rot, z_rot, cw, m, density, diameter_x, diameter_y, diameter_z, metal, state]
 		self.x_pos = x_pos
 		self.y_pos = y_pos
 		self.z_pos = z_pos
@@ -19,150 +19,150 @@ class object_class():
 		self.diameter_z = diameter_z
 		self.metal = metal
 		self.state = state
-		if self.check_data() == VALID:
+		if self.check_data() == "VALID":
 			print("All the parameters are valid")
 		else:
 			#!-- OSError is just a placeholder for the upcoming selfdefined error --!#
 			raise OSError("Some parameters are invalid")
 		#if more data needs to be included it can easily be added there
-	def check_data():
-		global x_pos_valid
-		global y_pos_valid
-		global z_pos_valid
-		global x_movement_valid
-		global y_movement_valid
-		global z_movement_valid
-		global x_rot_valid
-		global y_rot_valid
-		global z_rot_valid
-		global cw_valid
-		global m
-		global density_valid
-		global diameter_x_valid
-		global diameter_y_valid
-		global diameter_z_valid
-		global metal_valid
-		global state_valid
+	def check_data(self):
+		self.x_pos_valid = False
+		self.y_pos_valid = False
+		self.z_pos_valid = False
+		self.x_movement_valid = False
+		self.y_movement_valid = False
+		self.z_movement_valid = False
+		self.x_rot_valid = False
+		self.y_rot_valid = False
+		self.z_rot_valid = False
+		self.cw_valid = False
+		self.m = False
+		self.density_valid = False
+		self.diameter_x_valid = False
+		self.diameter_y_valid = False
+		self.diameter_z_valid = False
+		self.metal_valid = False
+		self.state_valid = False
 		#instead of manual if statements for + if could have been used
 
-		if x_pos == float(x_pos):
+		if self.x_pos == float(self.x_pos):
 			print("X_POS VALID!")
-			x_pos_valid = True
+			self.x_pos_valid = True
 		else:
 			print("X_POS NOT VALID!")
-			x_pos_valid = False
-		if y_pos == float(y_pos):
+			self.x_pos_valid = False
+		if self.y_pos == float(self.y_pos):
 			print("Y_POS VALID!")
-			y_pos_valid = True
+			self.y_pos_valid = True
 		else:
 			print("Y_POS NOT VALID!")
-			y_pos_valid = False
-		if z_pos == float(z_pos):
+			self.y_pos_valid = False
+		if self.z_pos == float(self.z_pos):
 			print("Z_POS VALID!")
-			z_pos_valid = True
+			self.z_pos_valid = True
 		else:
 			print("Z_POS NOT VALID!")
-			z_pos_valid = False
-		if x_movement == float(x_movement):
+			self.z_pos_valid = False
+		if self.x_movement == float(self.x_movement):
 			print("X_MOVEMENT VALID!")
-			x_movement_valid = True
+			self.x_movement_valid = True
 		else:
 			print("X_MOVEMENT NOT VALID!")
-			x_movement_valid = False
-		if y_movement == float(y_movement):
+			self.x_movement_valid = False
+		if self.y_movement == float(self.y_movement):
 			print("Y_MOVEMENT VALID!")
-			y_movement_valid = True
+			self.y_movement_valid = True
 		else:
 			print("Y_MOVEMENT NOT VALID!")
-			y_movement_valid = False
-		if z_movement ==float(z_movement):
+			self.y_movement_valid = False
+		if self.z_movement ==float(self.z_movement):
 			print("Z_MOVEMENT VALID!")
-			z_movement_valid = True
+			self.z_movement_valid = True
 		else:
 			print("Z_MOVEMENT NOT VALID!")
-			z_movement_valid = False
-		if x_rot == float(x_rot):
+			self.z_movement_valid = False
+		if self.x_rot == float(self.x_rot):
 			print("X_ROT VALID!")
-			x_rot_valid = True
+			self.x_rot_valid = True
 		else:
 			print("X_ROT NOT VALID!")
-			x_rot_valid = False
-		if y_rot == float(y_rot):
+			self.x_rot_valid = False
+		if self.y_rot == float(self.y_rot):
 			print("Y_ROT VALID!")
-			y_rot_valid = True
+			self.y_rot_valid = True
 		else:
 			print("Y_ROT NOT VALID!")
-			y_rot_valid = False
-		if z_rot == float(z_rot):
+			self.y_rot_valid = False
+		if self.z_rot == float(self.z_rot):
 			print("Z_ROT VALID!")
-			z_rot_valid = True
+			self.z_rot_valid = True
 		else:
 			print("Z_ROT NOT VALID!")
-			z_rot_valid = False
-		if cw == float(cw):
+			self.z_rot_valid = False
+		if self.cw == float(self.cw):
 			print("CW VALID!")
-			cw_valid = True
+			self.cw_valid = True
 		else:
 			print("CW NOT VALID!")
-			cw_valid = False
-		if m == float(m):
+			self.cw_valid = False
+		if self.m == float(self.m):
 			print("M VALID!")
-			m_valid = True
+			self.m_valid = True
 		else:
 			print("M NOT VALID!")
-			m_valid = False
-		if density == float(density):
+			self.m_valid = False
+		if self.density == float(self.density):
 			print("DENSITY VALID!")
-			density_valid = True
+			self.density_valid = True
 		else:
 			print("DENSITY NOT VALID!")
-			density_valid = False
-		if diameter_x == float(diameter_x):
+			self.density_valid = False
+		if self.diameter_x == float(self.diameter_x):
 			print("DIAMETER_X VALID!")
-			diameter_x_valid = True
+			self.diameter_x_valid = True
 		else:
 			print("DIAMETER_X NOT VALID!")
-			diameter_x_valid = False
-		if diameter_y == float(diameter_y):
+			self.diameter_x_valid = False
+		if self.diameter_y == float(self.diameter_y):
 			print("DIAMETER_Y VALID!")
-			diameter_y_valid = True
+			self.diameter_y_valid = True
 		else:
 			print("DIAMETER_Y NOT VALID!")
-			diameter_y_valid = False
-		if diameter_z == float(diameter_z):
+			self.diameter_y_valid = False
+		if self.diameter_z == float(self.diameter_z):
 			print("DIAMETER_Z VALID!")
-			diameter_z_valid = True
+			self.diameter_z_valid = True
 		else:
 			print("DIAMETER_Z NOT VALID!")
-			diameter_z_valid = False
-		if metal == True:
+			self.diameter_z_valid = False
+		if self.metal == True:
 			print("METAL VALID!")
-			metal_valid = True
-		elif metal == False:
+			self.metal_valid = True
+		elif self.metal == False:
 			print("METAL VALID!")
-			metal_valid = True
+			self.metal_valid = True
 		else:
 			print("METAL NOT VALID!")
-			metal_valid = False
-		if state == "solid":
+			self.metal_valid = False
+		if self.state == "solid":
 			print("STATE VALID!")
-			state_valid = True
-		elif state == "fluid":
+			self.state_valid = True
+		elif self.state == "fluid":
 			print("STATE VALID!")
-			state_valid = True
-		elif state == "gaseous":
+			self.state_valid = True
+		elif self.state == "gaseous":
 			print("STATE VALID!")
-			state_valid = True
+			self.state_valid = True
 		else:
 			print("STATE NOT VALID!")
-			state_valid = False
+			self.state_valid = False
 		#sum up in list instead it doesnt work
-		list_valid = [x_pos_valid, y_pos_valid, z_pos_valid, x_movement_valid, y_movement_valid, z_movement_valid, x_rot_valid, y_rot_valid, z_rot_valid, cw_valid, m_valid, density_valid, diameter_x_valid, diameter_y_valid, diameter_z_valid, metal_valid, state_valid]
-		for i in list_valid:
+		self.list_valid = [self.x_pos_valid, self.y_pos_valid, self.z_pos_valid, self.x_movement_valid, self.y_movement_valid, self.z_movement_valid, self.x_rot_valid, self.y_rot_valid, self.z_rot_valid, self.cw_valid, self.m_valid, self.density_valid, self.diameter_x_valid, self.diameter_y_valid, self.diameter_z_valid, self.metal_valid, self.state_valid]
+		for i in self.list_valid:
 			if i == True:
 				print("True")
 			else:
-				return INVALID
+				return "INVALID"
 		else:
-			return VALID
+			return "VALID"
 #!------- Object Class -------!#
