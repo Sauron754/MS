@@ -165,4 +165,16 @@ class object_class():
 				return "INVALID"
 		else:
 			return "VALID"
+	def export_values(self, object_number):
+		self.variables = [self.x_pos, self.y_pos, self.z_pos, self.x_movement, self.y_movement, self.z_movement, self.x_rot, self.y_rot, self.z_rot, self.cw, self.m, self.density, self.diameter_x, self.diameter_y, self.diameter_z, self.metal, self.state]
+		if object_number < 5:
+			#--again OSError is just temporary--#
+			raise OSError("Object number bejond possibility")
+		else:
+			object_index = object_number * 17
+			for variable in range(17):
+				index_number = variable + object_index
+				object_properties[index_number] = self.variables[variable]
+
+
 #!------- Object Class -------!#
