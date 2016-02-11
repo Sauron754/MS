@@ -1,4 +1,11 @@
 #linear movement module for x,y,z dimensions without inbound collisions and multiple objects
+#MPS Modules debug mode
+#
+#
+#
+#
+#
+#debug mode prints every variable which is beeing modified
 def lin_mov(object_number):
 	#!-- test global namespace system --!#
 	#print(test_namespaces)
@@ -7,6 +14,7 @@ def lin_mov(object_number):
 	from MPS import object_properties
 	from MPS import sequence_time
 	global object_properties
+	true_object_number = object_number - 1
 	if object_number < 5:
 		object_index = object_number * 17
 		x_pos = object_properties[0 + object_number]

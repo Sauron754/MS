@@ -32,7 +32,8 @@ def export_values(object_number):
 		#--again OSError is just temporary--#
 		raise OSError("Object number bejond possibility")
 	else:
-		object_index = object_number * 17
+		true_object_number = object_number - 1
+		object_index = true_object_number * 17
 		if object_number == 1:
 			data = MPS.object_1.data
 		elif object_number == 2:
