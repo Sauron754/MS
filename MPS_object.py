@@ -25,6 +25,24 @@ class object_class():
 			#!-- OSError is just a placeholder for the upcoming selfdefined error --!#
 			raise OSError("Some parameters are invalid")
 		#if more data needs to be included it can easily be added there
+	def update_variables(self):
+		self.x_pos = self.data[0]
+		self.y_pos = self.data[1]
+		self.z_pos = self.data[2]
+		self.x_movement = self.data[3]
+		self.y_movement = self.data[4]
+		self.z_movement = self.data[5]
+		self.x_rot = self.data[6]
+		self.y_rot = self.data[7]
+		self.z_rot = self.data[8]
+		self.cw = self.data[9]
+		self.m = self.data[10]
+		self.density = self.data[11]
+		self.diameter_x = self.data[12]
+		self.diameter_y = self.data[13]
+		self.diameter_z = self.data[14]
+		self.metal = self.data[15]
+		self.state = self.data[16]
 	def check_data(self):
 		self.x_pos_valid = False
 		self.y_pos_valid = False
@@ -165,16 +183,6 @@ class object_class():
 				return "INVALID"
 		else:
 			return "VALID"
-	def export_values(self, object_number):
-		self.variables = [self.x_pos, self.y_pos, self.z_pos, self.x_movement, self.y_movement, self.z_movement, self.x_rot, self.y_rot, self.z_rot, self.cw, self.m, self.density, self.diameter_x, self.diameter_y, self.diameter_z, self.metal, self.state]
-		if object_number < 5:
-			#--again OSError is just temporary--#
-			raise OSError("Object number bejond possibility")
-		else:
-			object_index = object_number * 17
-			for variable in range(17):
-				index_number = variable + object_index
-				object_properties[index_number] = self.variables[variable]
 
 
 #!------- Object Class -------!#

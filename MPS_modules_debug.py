@@ -1,4 +1,11 @@
 #linear movement module for x,y,z dimensions without inbound collisions and multiple objects
+#MPS Modules debug mode
+#
+#
+#
+#
+#
+#debug mode prints every variable which is beeing modified
 def lin_mov(object_number):
 	#!-- test global namespace system --!#
 	#print(test_namespaces)
