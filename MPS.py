@@ -112,6 +112,7 @@ def MPS(precision, time_total, object_1_posx, object_1_posy, object_1_posz, obje
 	for object_constant in range(5):
 		if assigned_objects[object_constant] == True:
 			assigned_objects_number = assigned_objects_number + 1
+			print("assigned_objects: ", assigned_objects_number)
 		else:
 			pass
 	#-----------#

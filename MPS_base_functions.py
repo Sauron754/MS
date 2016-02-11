@@ -23,8 +23,8 @@ def coordinate_assign(new_coordinates, object_number):
 	elif object_number == 5:
 		#same as above
 		print("obj5")
-
-	print("You should never see this. I use this to stop unstable versions from crashing completely")
+	else:
+		print("You should never see this. I use this to stop unstable versions from crashing completely")
 
 def export_values(object_number):
 	import MPS
