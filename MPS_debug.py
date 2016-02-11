@@ -2,11 +2,11 @@
 #!main launcher module!#
 #!---need to add leftover parameters---!#
 def MPS(precision, time_total, object_1_posx, object_1_posy, object_1_posz, object_1_xmov, object_1_ymov, object_1_zmov):
-	from MPS_modules import lin_mov
-	from MPS_object import object_class
-	from MPS_base_functions import coordinate_assign
-	from MPS_base_functions import export_values
-	from MPS_base_functions import glob_var
+	from MPS_modules_debug import lin_mov
+	from MPS_object_debug import object_class
+	from MPS_base_functions_debug import coordinate_assign
+	from MPS_base_functions_debug import export_values
+	from MPS_base_functions_debug import glob_var
 	global precision_global
 	global time_total_global
 	global object_1

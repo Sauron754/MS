@@ -15,3 +15,5 @@ global diameter_y
 global diameter_z
 global metal
 global state
+
+17 variables

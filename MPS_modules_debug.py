@@ -14,7 +14,6 @@ def lin_mov(object_number):
 	from MPS import object_properties
 	from MPS import sequence_time
 	global object_properties
-	true_object_number = object_number - 1
 	print("object_properties: ", object_properties)
 	if object_number < 5:
 		object_index = object_number * 17
