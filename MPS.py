@@ -7,6 +7,7 @@ def MPS(precision, time_total, object_1_posx, object_1_posy, object_1_posz, obje
 	from MPS_base_functions import coordinate_assign
 	from MPS_base_functions import export_values
 	from MPS_base_functions import glob_var
+	import decimal
 	global precision_global
 	global time_total_global
 	global object_1
@@ -15,66 +16,21 @@ def MPS(precision, time_total, object_1_posx, object_1_posy, object_1_posz, obje
 	global object_properties
 	global assigned_objects
 	global test_namespaces
+	#sets precision for decimal module
+	decimal.getcontext().prec = 28
+	#-----------#
+	#creates decimals from every input
+	precision_dec = decimal.Decimal(precision)
+	time_total_dec = decimal.Decimal(time_total)
+	object_1_posx_dec = decimal.Decimal(object_1_posx)
+	object_1_posy_dec = decimal.Decimal(object_1_posy)
+	object_1_posz_dec = decimal.Decimal(object_1_posz)
+	object_1_xmov_dec = decimal.Decimal(object_1_xmov)
+	object_1_ymov_dec = decimal.Decimal(object_1_ymov)
+	object_1_zmov_dec = decimal.Decimal(object_1_zmov)
+	#-----------#
 	#creates variable for testing global namespaces
 	test_namespaces = True
-	#-----------#
-	#testes own global access
-	if glob_var == True:
-		print("namespaces valid")
-	else:
-		#defined error needs to be implemented
-		raise(OSError("global namespaces invalid"))
-	#-----------#
-	#MPS_base_functions#
-	#def coordinate_assign(new_coordinates, object_number):
-	#	global output
-	#	if object_number == 1:
-	#		object_1.x_pos = new_coordinates[0]
-	#		object_1.y_pos = new_coordinates[1]
-	#		object_1.z_pos = new_coordinates[2]
-	#		output = [object_1.x_pos, object_1.y_pos, object_1.z_pos]
-	#	elif object_number == 2:
-	#		object_2.x_pos = new_coordinates[0]
-	#		object_2.y_pos = new_coordinates[1]
-	#		object_2.z_pos = new_coordinates[2]
-	#		output = [object_2.x_pos, object_2.y_pos, object_2.z_pos]
-	#	elif object_number == 3:
-	#		object_3.x_pos = new_coordinates[0]
-	#		object_3.y_pos = new_coordinates[1]
-	#		object_3.z_pos = new_coordinates[2]
-	#		output = [object_3.x_pos, object_3.y_pos, object_3.z_pos]
-	#	elif object_number == 4:
-	#		object_4.x_pos = new_coordinates[0]
-	#		object_4.y_pos = new_coordinates[1]
-	#		object_4.z_pos = new_coordinates[2]
-	#		output = [object_4.x_pos, object_4.y_pos, object_4.z_pos]
-	#	elif object_number == 5:
-	#		object_5.x_pos = new_coordinates[0]
-	#		object_5.y_pos = new_coordinates[1]
-	#		object_5.z_pos = new_coordinates[2]
-	#		output = [object_5.x_pos, object_5.y_pos, object_5.z_pos]
-	#	else:
-	#		print("You should never see this. I use this to stop unstable versions from crashing completely")
-
-	#def export_values(object_number):
-	#	if object_number > 5:
-	#		#--again OSError is just temporary--#
-	#		raise OSError("Object number bejond possibility")
-	#	else:
-	#		object_index = object_number * 17
-	#		if object_number == 1:
-	#			data = object_1.data
-	#		elif object_number == 2:
-	#			data = object_2.data
-	#		elif object_number == 3:
-	#			data = object_3.data
-	#		elif object_number == 4:
-	#			data = object_4.data
-	#		elif object_number == 5:
-	#			data = object_5.data
-	#		for variable in range(17):
-	#			index_number = variable + object_index
-	#			object_properties[index_number] = data[variable]
 	#-----------#
 	#-creates list with placeholders for 5 objects and import object_class--#
 	object_properties = [False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False]
@@ -85,7 +41,7 @@ def MPS(precision, time_total, object_1_posx, object_1_posy, object_1_posz, obje
 	precision_global = precision
 	#-----------#
 	#--defines object--#
-	object_1 = object_class(object_1_posx, object_1_posy, object_1_posz, object_1_xmov, object_1_ymov, object_1_zmov)
+	object_1 = object_class(object_1_posx_dec, object_1_posy_dec, object_1_posz_dec, object_1_xmov_dec, object_1_ymov_dec, object_1_zmov_dec)
 	assigned_objects[0] = True
 	#-----------#
 	#exports data of objects to object_properties cluster#
@@ -129,10 +85,9 @@ def MPS(precision, time_total, object_1_posx, object_1_posy, object_1_posz, obje
 			#object_4_coordinates = [object_4.x_pos, object_4.y_pos, object_4.z_pos]
 			#object_5_coordinates = [object_5.x_pos, object_5.y_pos, object_5.z_pos]
 			#-----------#
-		print("After process:", process_number, "\n object 1 is at: ", object_1_coordinates)
-		#print("After process:", process_number, "\n object_2 is at: ", object_2_coordinates)
-		#print("After process:", process_number, "\n object_3 is at: ", object_3_coordinates)
-		#print("After process:", process_number, "\n object_4 is at: ", object_4_coordinates)
-		#print("After process:", process_number, "\n object_5 is at: ", object_5_coordinates)
-		#**linear movement module end**#
+		print("After process:", process_number, "\n object 1 is at: ", decimal.Decimal(object_1_coordinates[0]), decimal.Decimal(object_1_coordinates[1]), decimal.Decimal(object_1_coordinates[2]))
+		#print("After process:", process_number, "\n object_2 is at: ", decimal.Decimal(object_2_coordinates[0]), decimal.Decimal(object_2_coordinates[1]), decimal.Decimal(object_2_coordinates[2]))
+		#print("After process:", process_number, "\n object_3 is at: ", decimal.Decimal(object_3_coordinates[0]), decimal.Decimal(object_3_coordinates[1]), decimal.Decimal(object_3_coordinates[2]))
+		#print("After process:", process_number, "\n object_4 is at: ", decimal.Decimal(object_4_coordinates[0]), decimal.Decimal(object_4_coordinates[1]), decimal.Decimal(object_4_coordinates[2]))
+		#print("After process:", process_number, "\n object_5 is at: ", decimal.Decimal(object_5_coordinates[0]), decimal.Decimal(object_5_coordinates[1]), decimal.Decimal(object_5_coordinates[2]))
 	#-----------#

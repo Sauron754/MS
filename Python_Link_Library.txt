@@ -1,6 +1,6 @@
 Python Link Library
 Sys Path
-sys.path.append("C:\Data\Python_Library\MS")
+sys.path.append("C:\Data\Python_Library\MS") / sys.path.append("F:\Daten\Python\Python_Library\MS")
 
 Standard MS Test Procedure
 MPS.MPS(1, 20, 0, 0, 0, 1, 2, 3)
