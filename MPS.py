@@ -20,14 +20,14 @@ def MPS(precision, time_total, object_1_posx, object_1_posy, object_1_posz, obje
 	decimal.getcontext().prec = 28
 	#-----------#
 	#creates decimals from every input
-	precision_dec = decimal.Decimal(precision)
-	time_total_dec = decimal.Decimal(time_total)
-	object_1_posx_dec = decimal.Decimal(object_1_posx)
-	object_1_posy_dec = decimal.Decimal(object_1_posy)
-	object_1_posz_dec = decimal.Decimal(object_1_posz)
-	object_1_xmov_dec = decimal.Decimal(object_1_xmov)
-	object_1_ymov_dec = decimal.Decimal(object_1_ymov)
-	object_1_zmov_dec = decimal.Decimal(object_1_zmov)
+	#precision_dec = decimal.Decimal(precision)
+	#time_total_dec = decimal.Decimal(time_total)
+	#object_1_posx_dec = decimal.Decimal(object_1_posx)
+	#object_1_posy_dec = decimal.Decimal(object_1_posy)
+	#object_1_posz_dec = decimal.Decimal(object_1_posz)
+	#object_1_xmov_dec = decimal.Decimal(object_1_xmov)
+	#object_1_ymov_dec = decimal.Decimal(object_1_ymov)
+	#object_1_zmov_dec = decimal.Decimal(object_1_zmov)
 	#-----------#
 	#creates variable for testing global namespaces
 	test_namespaces = True
