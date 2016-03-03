@@ -17,5 +17,11 @@ def MPS(precision, time_total, object_1_posx, object_1_posy, object_1_posz, obje
 	assigned_objects = 0
 	negative_precision = 0 - precision
 	sequence_time = 10**negative_precision
+	runthrough_count =  int(time_total / sequence_time)
 	#!
-	object_1 = object_class(object_1_posx_dec, object_1_posy_dec, object_1_posz_dec, object_1_xmov_dec, object_1_ymov_dec, object_1_zmov_dec)
+	#actual launcher module
+	object_1 = MPS_object.object_class(object_1_posx, object_1_posy, object_1_posz, object_1_xmov, object_1_ymov, object_1_zmov)
+	for current_runthrough in runthrough_count:
+		MPS_modules.lin_mov(1)
+		object_1_output = [object_1.x_pos, object_1.y_pos, object_1.z_pos]
+		print("After process number: ", current_runthrough, "object 1 is at ", object_1_output)
